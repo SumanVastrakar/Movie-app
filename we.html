@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<link rel=" preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mochiy+Pop+P+One&family=PT+Serif&family=Pacifico&family=Rubik+Beastly&display=swap"
+        rel="stylesheet">
+    <title>bouncing</title>
+</head>
+<style>
+    body {
+        background-image: url("https://wallpapercave.com/wp/wp4565927.jpg");
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+    }
+
+    #container {
+        width: 80%;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* border:1px solid red; */
+        margin-top: 1%;
+        padding: 20px;
+        font-family: 'Bree Serif', serif;
+
+    }
+
+    .search_bar {
+        text-align: end;
+        /* border: 1px solid blue; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+
+    #input {
+        width: 200px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 23px;
+        ;
+    }
+
+    #submit {
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        margin: 20px;
+        font-size: 23px;
+        ;
+    }
+
+    .display {
+        width: 80%;
+        margin: auto;
+        /* border:1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-top: 1%;
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .text {
+        width: 90%;
+        background-image: url();
+        /* border:1px solid green; */
+        margin: auto;
+        height: 15vh;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 20px;
+        /* background-image: url("https://thumbs.dreamstime.com/b/purple-petunia-flowers-bed-beautiful-blurred-nature-background-banner-website-garden-concept-toned-54798543.jpg");
+      /* background-repeat:no-repeat; */
+        /* background-size: cover; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+        font-size: 40px;
+        font-weight: 900px;
+        font-family: 'Bree Serif', serif;
+        /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .image {
+        width: 47%;
+        /* border:1px solid green; */
+        /* margin:auto; */
+        height: 50vh;
+        margin-top: 2%;
+        margin-left: 3%;
+        border-radius: 10px;
+        /* background-image: url("https://cdn.pixabay.com/photo/2018/01/12/14/24/night-3078326_960_720.jpg");
+      /* background-repeat:no-repeat; */
+        background-size: cover;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    } */
+    }
+
+    .info {
+        display: flex;
+    }
+
+    .movie_info {
+
+        width: 47%;
+        /* border:1px solid green; */
+        /* margin:auto; */
+        height: 50vh;
+        text-align: center;
+        /* background-color: whitesmoke; */
+        margin-top: 2%;
+        margin-left: 3%;
+        /* background-image: url("https://thumbs.dreamstime.com/b/wedding-flower-frame-blue-background-above-beautiful-floral-pattern-flat-lay-style-79676427.jpg");
+      /* background-repeat:no-repeat; */
+        background-size: cover;
+        border-radius: 10px;
+        /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.9) -3px -3px 6px 1px inset; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .hidden {
+        display:none;
+    }
+
+    .for_append {
+        background-image: url("https://wallpapercave.com/wp/wp4565927.jpg");
+        background-size: cover;
+        width: 300px;
+        /* height:300px; */
+        /* border:1px solid black; */
+        /* display:hidden; */
+        margin-left: 800px;
+        /* margin-top: 10px; */
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+        padding: 20px;
+        font-size: 20px;
+        z-index: +1;
+        position: absolute;
+
+
+        /* overflow:scroll; */
+        cursor: pointer;
+    }
+
+    .para {
+        cursor: pointer;
+
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div class="search_bar">
+            <input id="input" onclick="select()" oninput="debounce(main,1000)" type="text">
+
+            <button id="submit">Search </button>
+        </div>
+        <div class="for_append hidden"></div>
+        <div class="display">
+            <div class="text"></div>
+            <div class="info">
+                <div class="image"></div>
+                <div class="movie_info"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    async function movieSearch() {
+        let movie = document.querySelector("#input").value;
+        if (movie == "") {
+            let append_container = document.querySelector(".for_append");
+            append_container.textContent = "";
+        }
+        let data = await fetch(`https://www.omdbapi.com/?s=${movie}&apikey=4b7a2ce6`)
+        data = await data.json()
+        if (data.Response == "False")
+            return;
+        console.log(data.Search);
+        appendData(data.Search);
+        // displayData(data);
+    }
+    function main() {
+        let x = movieSearch();
+
+    }
+    var timer_watch;
+    function debounce(main, delay) {
+        if (timer_watch)
+            clearTimeout(timer_watch);
+        timer_watch = setTimeout(function () {
+            main();
+        }, delay)
+    }
+    function appendData(movies) {
+        let append_container = document.querySelector(".for_append");
+        append_container.textContent = "";
+        movies.forEach(function (elem) {
+            let p = document.createElement("p");
+            p.textContent = elem.Title
+            p.setAttribute("class", "para")
+            p.addEventListener("click", async function () {
+                append_container.classList.add("hidden")
+                append_container.textContent = "";
+                let value = elem.Title;
+                console.log(value);
+                let data = await fetch(`https://www.omdbapi.com/?t=${value}&apikey=4b7a2ce6`)
+                data = await data.json()
+                console.log(data);
+                document.querySelector(".text").textContent = "";
+                document.querySelector(".image").textContent = "";
+                document.querySelector(".movie_info").textContent = "";
+                displayData(data);
+
+            })
+            append_container.append(p);
+            append_container.classList.remove("hidden")
+        })
+
+    }
+    function select() {
+        // var select=document.querySelector(".para").textContent;
+        console.log("button");
+    }
+
+    document.querySelector("#submit").addEventListener("click", async function () {
+       document.querySelector(".for_append").classList.add("hidden")
+        let input = document.querySelector("#input").value;
+        console.log(input);
+       
+        let data = await fetch(`https://www.omdbapi.com/?t=${input}&apikey=4b7a2ce6`)
+        data = await data.json()
+        console.log(data);
+        document.querySelector(".text").textContent = "";
+        document.querySelector(".image").textContent = "";
+        document.querySelector(".movie_info").textContent = "";
+        displayData(data);
+        //  main();
+    })
+    function displayData(movie) {
+        // console.log(movie);
+        let i = 0;
+        if (movie.Response == "False") {
+            document.querySelector(".text").textContent = movie.Error;
+            let img_error = document.createElement("img");
+            img_error.src = "https://c.tenor.com/lRw40xP_ifYAAAAC/hello-kitty.gif";
+            img_error.style.width = "100%";
+            img_error.style.height = "100%";
+            // img.style.borderRadius="10px"
+            img_error.style.borderRadius = "10px"
+            document.querySelector(".image").append(img_error);
+            let img_error1 = document.createElement("img");
+            img_error1.src = "https://c.tenor.com/vQPerJstFbsAAAAC/go-ahead-try-another-one-south-park.gif";
+            img_error1.style.width = "100%";
+            img_error1.style.height = "100%";
+            img_error1.style.borderRadius = "10px"
+            document.querySelector(".movie_info").append(img_error1);
+
+
+        }
+        else {
+            document.querySelector(".text").textContent = movie.Title;
+            let h4_1 = document.createElement("h4");
+            h4_1.textContent = `Released On : ${movie.Released}`;
+            let h4_2 = document.createElement("h4");
+            h4_2.textContent = `Actors are : ${movie.Actors}`;
+            let h4_3 = document.createElement("h4");
+            h4_3.textContent = `Rating : ${movie.Ratings[0].Value}`;
+            if (Number(movie.imdbRating) > 8.5) {
+                let h2 = document.createElement("h2");
+                h2.textContent = "Recommended!!";
+                h2.style.color = "green";
+                document.querySelector(".movie_info").append(h2);
+            }
+            let h4_4 = document.createElement("h4");
+            h4_4.textContent = `Country : ${movie.Country}`;
+            let h4_5 = document.createElement("h4");
+            h4_5.textContent = `plot : ${movie.Plot}`;
+            console.log(movie.imdbRating)
+            document.querySelector(".movie_info").append(h4_1, h4_2, h4_3, h4_4, h4_5);
+
+            let img = document.createElement("img");
+            img.src = movie.Poster;
+            img.style.width = "100%";
+            img.style.height = "100%";
+            img.style.borderRadius = "10px"
+            document.querySelector(".image").append(img);
+        }
+
+    }
+</script>
